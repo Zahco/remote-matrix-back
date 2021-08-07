@@ -1,6 +1,7 @@
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import permissions
+import json
 
 
 @api_view(['GET', 'POST'])
@@ -11,4 +12,11 @@ def state(request):
         return Response({ 'state': [] })
     elif request.method == 'POST':
         # TODO Apply update matrix
-        return Response({ 'state': request.POST.get('test') })
+        matrix = json.loads(request.body)['matrix']
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                matrix[i][j] = int(matrix[i][j])
+        array = []
+        for line in matrix:
+            array += line
+        return Response({ 'matrix': matrix, 'line': array })
