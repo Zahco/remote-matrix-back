@@ -12,11 +12,12 @@ def state(request):
         return Response({ 'state': [] })
     elif request.method == 'POST':
         # TODO Apply update matrix
-        matrix = json.loads(request.body)['matrix']
-        for i in range(len(matrix)):
-            for j in range(len(matrix[i])):
-                matrix[i][j] = int(matrix[i][j])
-        array = []
-        for line in matrix:
-            array += line
-        return Response({ 'matrix': matrix, 'line': array })
+        return Response({ 'body': request.body })
+        # matrix = json.loads(request.body)['matrix']
+        # for i in range(len(matrix)):
+        #     for j in range(len(matrix[i])):
+        #         matrix[i][j] = int(matrix[i][j])
+        # array = []
+        # for line in matrix:
+        #     array += line
+        # return Response({ 'matrix': matrix, 'line': array })
