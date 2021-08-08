@@ -28,7 +28,7 @@ def state(request):
 @permission_classes((permissions.AllowAny,))
 def reset(request):
     if request.method == 'POST':
-        # uart_rpi = uart_max7219_ctrl_class(baudrate = 230400)
-        # uart_rpi.init_static_ram()
-        # uart_rpi.close_uart()
+        uart_rpi = uart_max7219_ctrl_class(baudrate = 230400)
+        uart_rpi.init_static_ram()
+        uart_rpi.close_uart()
         return Response({ 'msg': 'success' })
