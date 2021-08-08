@@ -2,8 +2,8 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import permissions
 import json
-# import sys
-# from remotematrixapi.scripts_uart_max7219 import *
+import sys
+from remotematrixapi.scripts_uart_max7219 import *
 
 
 
