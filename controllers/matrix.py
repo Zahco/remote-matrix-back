@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import permissions
 import json
 import sys
-from remotematrixapi.scripts_uart_max7219 import *
+from remotematrixapi.scripts_uart_max7219.uart_max7219_ctrl_class import *
 
 
 
