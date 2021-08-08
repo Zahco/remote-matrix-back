@@ -27,7 +27,7 @@ def state(request):
         uart_rpi = uart_max7219_ctrl_class(baudrate = 230400)
         matrix_array = np.array(matrix)
         static_pattern_data = uart_rpi.matrix_2_static_pattern(matrix_array)
-        uart_rpi.load_pattern_static(start_ptr, static_pattern_data)
+        uart_rpi.load_pattern_static(0, static_pattern_data)
         uart_rpi.close_uart()
         return Response({ 'matrix': matrix })
 
