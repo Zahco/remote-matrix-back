@@ -28,6 +28,7 @@ def state(request):
         matrix_array = np.array(matrix)
         static_pattern_data = uart_rpi.matrix_2_static_pattern(matrix_array)
         uart_rpi.load_pattern_static(0, static_pattern_data)
+        uart_rpi.run_pattern_static(0, 64)
         uart_rpi.close_uart()
         return Response({ 'matrix': matrix })
 
