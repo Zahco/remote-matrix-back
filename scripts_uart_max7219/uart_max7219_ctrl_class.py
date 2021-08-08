@@ -5,7 +5,7 @@
 import sys
 import numpy as np
 
-from uart_class import *
+from remotematrixapi.scripts_uart_max7219.uart_class import *
 
 
 
